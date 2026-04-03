@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: black;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #ff6b35;
+}
+
+.search-bar button {
+  padding: 0.75rem 1.5rem;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #e55a25;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-hero {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #fff8f5;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 2px solid #ffe0d0;
+}
+
+.modal-hero img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal-hero-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.modal-hero-info h2 {
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.modal-hero-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.ingredients h3, .instructions h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #ff6b35;
+  border-bottom: 2px solid #ffe0d0;
+  padding-bottom: 0.5rem;
+}
+
+.ingredients ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ingredients ul li {
+  font-size: 0.9rem;
+  color: #444;
+  padding: 0.4rem 0.75rem;
+  background: #fff8f5;
+  border-radius: 6px;
+  border-left: 3px solid #ff6b35;
+}
+
+.instructions p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #444;
+  white-space: pre-line;
+}
+
+@media (max-width: 600px) {
+  .modal-hero {
+    flex-direction: column;
+  }
+
+  .modal-hero img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.empty {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  color: #888;
+}
+
